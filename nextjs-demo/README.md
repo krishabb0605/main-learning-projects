@@ -8,29 +8,63 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Development Steps
+**1. Initial Project Setup**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Initialized the project using create-next-app.
+- Set up the basic folder structure and configuration.
 
-## Learn More
+**2. Server and Client Components**
 
-To learn more about Next.js, take a look at the following resources:
+-  Learn concept of server and client components in Next.js.
+- Created basic examples to demonstrate the differences and usage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**3. Basic Routing in Next.js**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Implemented foundational routing using the app directory.
+- Created a few pages to test navigation.
 
-## Deploy on Vercel
+**4. Layout Concepts**
+- Applied shared layout using layout.tsx.
+- Demonstrated persistent layout across different routes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**5. Navigation Between Pages**
+- Implemented navigation using next/link.
+- Connected multiple pages with navigation links.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**6. Users API - GET and POST**
+- Created GET and POST API routes under /api/user.
+- Allowed client-side interaction with user data.
+
+**7. Server and Client Data Fetching**
+- Implemented data fetching on both server and client sides.
+- Used Next.js features like fetch in server components.
+
+**8. Mock API and User Functionality**
+- Used [MockAPI](https://mockapi.io/) to simulate backend services.
+- Developed UI to display and manage mock user data.
+
+**9. Authentication via Clerk**
+- Integrated [Clerk](https://mockapi.io/)  for user authentication.
+- Secured routes and fetched user data post-authentication.
+
+## Dependencies
+
+[jsonplaceholder](https://jsonplaceholder.typicode.com/)- For dummy backend data.
+
+[MockAPI](https://mockapi.io/) – For simulating backend APIs.
+- Create a new project.
+- Add a resource (e.g., users).
+- Use the provided GET API endpoint.
+
+
+[Clerk](https://mockapi.io/) –  For authentication.
+- Sign up on Clerk and create an application.
+- Choose your sign-in methods (e.g., email, github).
+- Install required Clerk dependencies.
+- Set up environment variables using Clerk’s signing secret.
+- Update your middleware to use Clerk authentication

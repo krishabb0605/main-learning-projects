@@ -1,3 +1,4 @@
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
 type MockUser = {
@@ -8,6 +9,9 @@ type MockUser = {
 // here automatic loading and error state is loaded default.
 // For server compoenent.
 export default async function MockUsers() {
+    const authObj = await auth();
+    const usersObj = await currentUser();
+    console.log({ authObj, usersObj })
     const res = await fetch(
         "https://681dcfefc1c291fa6631c4a1.mockapi.io/users"
     );

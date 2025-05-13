@@ -2,7 +2,7 @@
 // You can't use metadata in client component.
 
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import React from 'react'
 
 // In title show product page when we reach to  this route. 
@@ -43,7 +43,8 @@ const Product = async ({ params }: Props) => {
     const { id } = await params;
 
     if (parseInt(id) > 1000) {
-        notFound();
+        // notFound();
+        redirect("/")
     }
     return (
         <div>Product id {id}</div>

@@ -13,22 +13,30 @@ import React from 'react'
 //     title: "Product page.",
 // };
 
+export const metadata: Metadata = {
+    title: {
+        default: "Product page 123.",
+        template: "%s - new app",
+        absolute: "",
+    },
+};
+
 type Props = {
     params: Promise<{ id: string }>
 }
 
 // Using this it gives title as per id. strickly give name as `generateMetadata`
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-    const { id } = await params;
-    const title = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(`iphone ${id}`)
-        }, 2000);
-    })
-    return {
-        title: `Product ${title}`,
-    };
-};
+// export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+//     const { id } = await params;
+//     const title = await new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve(`iphone ${id}`)
+//         }, 2000);
+//     })
+//     return {
+//         title: `Product ${title}`,
+//     };
+// };
 
 // route /products/:id
 const Product = async ({ params }: Props) => {

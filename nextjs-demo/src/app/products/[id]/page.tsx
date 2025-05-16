@@ -2,7 +2,7 @@
 // You can't use metadata in client component.
 
 import { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import React from 'react'
 
 // In title show product page when we reach to  this route. 
@@ -20,6 +20,18 @@ export const metadata: Metadata = {
         absolute: "",
     },
 };
+
+export const dynamicParams = false;
+
+/**
+ * using `dynamicParams` as True => it will be dynamically render all page.
+ * using `dynamicParams` as false => navigate to product/4 it show as page not found return 404
+ * using this time stamp will stay as it is not every time it will change.
+ * 
+ */
+export async function generateStaticParams() {
+    return [{ id: "1" }, { id: "2" }, { id: "3" }]
+}
 
 type Props = {
     params: Promise<{ id: string }>
@@ -47,7 +59,7 @@ const Product = async ({ params }: Props) => {
         redirect("/")
     }
     return (
-        <div>Product id {id}</div>
+        <div>Product id {id} with time {new Date().toLocaleTimeString()}</div>
     )
 }
 

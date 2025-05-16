@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/navigation";
 import { ClerkProvider } from '@clerk/nextjs'
+import { createContext } from "react";
+import { Themeprovider } from "./components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,21 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <header className="bg-slate-900 text-white p-4 text-center">
-            {/* <p>Welcome to next.js course</p> */}
-            <Navigation />
-          </header>
-          {children}
-          <footer className="bg-slate-900 text-white p-4 text-center">
-            Krisha bhingaradiya
-          </footer>
-        </body>
-      </html>
-    </ClerkProvider>
+    <Themeprovider>
+      <ClerkProvider>
+        <html lang="en">
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <header className="bg-slate-900 text-white p-4 text-center">
+              {/* <p>Welcome to next.js course</p> */}
+              <Navigation />
+            </header>
+            {children}
+            <footer className="bg-slate-900 text-white p-4 text-center">
+              Krisha bhingaradiya
+            </footer>
+          </body>
+        </html>
+      </ClerkProvider>
+    </Themeprovider>
   );
 }

@@ -68,3 +68,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Install required Clerk dependencies.
 - Set up environment variables using Clerk’s signing secret.
 - Update your middleware to use Clerk authentication
+
+Prisma
+
+npx prisma init --datasource-provider sqlite
+
+Add product model and run migration using
+npx prisma migrate dev --name init

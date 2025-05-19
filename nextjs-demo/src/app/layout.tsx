@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/navigation";
 import { ClerkProvider } from '@clerk/nextjs'
-import { createContext } from "react";
 import { Themeprovider } from "./components/theme-provider";
 
 const geistSans = Geist({

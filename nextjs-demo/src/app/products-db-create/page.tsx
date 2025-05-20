@@ -1,6 +1,7 @@
 import { addProducts } from '@/prisma-db';
 import { redirect } from 'next/navigation';
 import React from 'react'
+import Submit from '../components/Submit';
 
 export default async function AddProductPage() {
     async function CreateProduct(formData: FormData) {
@@ -42,12 +43,7 @@ export default async function AddProductPage() {
                 />
             </label>
 
-            <button
-                type='submit'
-                className='mt-2 block w-full text-white bg-blue-500 rounded disabled:bg-gray-500 cursor-pointer'
-            >
-                Add Product
-            </button>
+            <Submit />
         </form>
     )
 }

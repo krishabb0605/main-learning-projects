@@ -10,7 +10,7 @@ export type Errors = {
 }
 
 export type FormState = {
-    error: Errors;
+    errors: Errors;
 }
 
 export async function createProduct(prevState: FormState, formData: FormData) {

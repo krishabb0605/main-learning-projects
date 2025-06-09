@@ -5,7 +5,7 @@ import { createProduct, FormState } from '@/actions/products';
 
 export default function AddProductPage() {
     const initialState: FormState = {
-        error: {},
+        errors: {},
     }
 
     const [state, formAction, isPending] = useActionState(

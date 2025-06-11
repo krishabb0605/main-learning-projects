@@ -2,7 +2,8 @@ import {
     SignedIn,
     SignedOut,
     SignInButton,
-    SignOutButton
+    SignOutButton,
+    SignUpButton
 } from "@clerk/nextjs"
 import Link from "next/link"
 
@@ -19,7 +20,17 @@ export const Navigation = () => {
 
                     <div className="flex items-center gap-4">
                         <SignedOut>
-                            <SignInButton mode="modal" />
+                            <SignInButton>
+                                <button className="px-2 py-1 text-sm border border-neutral-300 dark:border-neutral-800">
+                                    Sign In
+                                </button>
+                            </SignInButton>
+
+                            <SignUpButton>
+                                <button className="px-2 py-1 text-sm border border-neutral-300 dark:border-neutral-800">
+                                    Sign up
+                                </button>
+                            </SignUpButton>
                         </SignedOut>
 
                         <SignedIn>
